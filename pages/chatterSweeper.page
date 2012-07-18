@@ -1,0 +1,22 @@
+<apex:page standardController="Chatter__c" extensions="ChatterSweepController"  >
+   <apex:form >
+   
+   <apex:tabPanel >
+   <apex:tab label="Chatter Sweeper">
+   <font><b>Select Date range to delete the chatter data</b> </font><br /><br />
+    <apex:outputLabel value="Start Date"></apex:outputLabel>
+   <apex:inputField value="{!Chatter__c.Start_date__c}" /><br /><br />
+   <apex:outputLabel value="End Date"></apex:outputLabel> &nbsp; 
+   <apex:inputField value="{!Chatter__c.End_date__c}" /><br /><br /><br />
+ 
+   Chatter Posts<apex:inputCheckbox label="Chatter Posts" value="{!posts}"/>
+   Comments<apex:inputCheckbox label="Comments" value="{!comments}"/>
+   Uploaded Content<apex:inputCheckbox label="Uploaded Content" value="{!uploadContent}"/>
+   <apex:commandButton value="Delete" action="{!DeleteChatter}"/>
+   
+   
+</apex:tab>
+   </apex:tabPanel>
+
+    </apex:form>
+</apex:page>
